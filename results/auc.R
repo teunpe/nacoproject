@@ -3,7 +3,7 @@ library(dplyr)
 library(AUC)
 library(matp)
 # Comparison of English and Tagalog:
-#setwd("./Desktop/assignment2/negative-selection/")
+setwd("./nacoproject/results")
 for(r in 1:9) {
   # Load the score for each English string and label it as 0
   score = readLines(sprintf("%d.txt", r))
@@ -26,7 +26,6 @@ for(r in 1:9) {
 # Repeat this process for the 4 other languages
 langs <- list('ar', 'de', 'el', 'en', 'eo', 'fr', 'hi', 'la', 'pl', 'ru', 'sw', 'zh')
 for(lang in langs) {
-  print(lang)
   score = readLines("eo4.txt")
   data_e = as.data.frame(score)
   data_e$label <- 0
@@ -34,7 +33,6 @@ for(lang in langs) {
   data_t = as.data.frame(score)
   data_t$label <- 1
   data_t = rbind(data_e, data_t)
-  View(data_t)
   auc = auc(roc(data_t$score, factor(data_t$label)))
   print(lang)
   print(auc)
