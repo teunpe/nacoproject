@@ -3,7 +3,7 @@ library(dplyr)
 library(AUC)
 library(matp)
 # Comparison of English and Tagalog:
-setwd("./nacoproject/results")
+setwd("./results")
 
 # Repeat this process for the 4 other languages
 langs <- list('ar', 'de', 'el', 'en', 'eo', 'fr', 'hi', 'la', 'pl', 'ru', 'sw', 'zh')
