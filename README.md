@@ -8,9 +8,9 @@ evaluate how similar are those languages to Esperanto, as well as  assessing whe
 orthographically or phonetically.
 
 ### Content Description
-* **fetch.sh**: Clones and retrieves the data files for the relevant languages from the OSCAR-2109 dataset.
+* **fetch.sh**: Retrieves the data files for the relevant languages from the OSCAR-2109 dataset.
 * **dataprep.ipynb:** Pre-processes the raw data files. 
-* **negsel.upynb**: Performs negative selection on the pre-processed files.
+* **negsel.ipynb**: Performs negative selection on the pre-processed files.
 * **auc.R**: Computes the Area Under the (ROC) Curve.
 * **alphabets**: Contains the alphabet per language.
 * **data**: Contains the raw data, the transliterated version, and the corresponding train/test split.
