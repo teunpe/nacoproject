@@ -2,7 +2,9 @@ library(stringr) # For str_trim
 library(dplyr)
 library(AUC)
 library(matp)
-# Comparison of English and Tagalog:
+
+#set directory
+getwd()
 setwd("./results")
 
 # Repeat this process for the 4 other languages
