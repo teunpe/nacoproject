@@ -43,7 +43,7 @@ for(lang in langs) {
 
 ##############################
 ##############################
-
+# 
 for(r in 1:5) {
   # Load the score for each English string and label it as 0
   score = readLines(sprintf("snd-unm_normal_%d.txt", r))
