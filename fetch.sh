@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Cloning repo..."
 GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/datasets/oscar-corpus/OSCAR-2109
+
 cd OSCAR-2109
 
 for lan in "en" "de" "pl" "ru" "el" "fr" "zh" "ar" "hi"; do
@@ -20,3 +20,12 @@ find ./packaged -mindepth 1 -type d ! -path './packaged/en' -type d ! -path './p
 -type d ! -path './packaged/la' -type d ! -path './packaged/fr' -type d ! -path './packaged/zh' \
 -type d ! -path './packaged/sw' -type d ! -path './packaged/ar' \
 -type d ! -path './packaged/hi' ! -path './packaged/eo' -exec rm -rf {} +
+
+cd ..
+
+num_lines=50
+
+for lan in "ru" "el" "zh" "ar" "hi"; do
+zcat ./OSCAR-2109/packaged/"$lan"/"$lan"_part_1.txt.gz | head -n "$num_lines" > ./data/translit/"$lan"_subset.txt
+done
+
