@@ -17,6 +17,19 @@ orthographically or phonetically.
 * **results**: Contains the output from the negative selection algorithm.
 
 ### Setup
+1. Clone the current repository to the directory of your choice.
+   
+   `git clone git@github.com:teunpe/nacoproject.git`
+   
+2. Enter the cloned repository (`nacoproject`) and retrieve the relevant files from the OSCAR-2109 dataset.
 
+    `sh fetch.sh`
+
+3. From the terminal, open the file '**dataprep.ipynb**' with the preferred interactive development environment for notebooks e.g. jupyter notebook. And run all the cells.
+   
+    `jupyter notebook`
+   
+4. Once the data is put into correct format, the '**negsel.ipynb**' notebook can be ran to perform Negative Selection.
+5. Now that the experiments have been performed, the results can inspected by opening the file '**auc.R**' with the desired code editor. And run all the chunks of code. A collection of the results can be seen on the `./results` folder under the name `resD_R.txt` where D is the current day, and R the run number e.g. `res22_1.txt`.
 
 ### Example
