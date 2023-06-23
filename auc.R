@@ -6,6 +6,7 @@ library(rstudioapi)
 
 #set directory
 current_file_path <- path.expand(dirname(rstudioapi::getSourceEditorContext()$path))
+current_file_path
 getwd()
 setwd(paste0(current_file_path, "/results"))
 getwd()
@@ -13,11 +14,12 @@ getwd()
 #write into file
 #IMPORTANT: change 'run' variable every time the following chunks of code are run
 #for each time ALL the code chunks are ran: run = run + 1
-run=1
+run=2
 
 day<-format(Sys.Date(), "%d")
-
-res<-file(sprintf("res%s_%s.txt", day, run), "w")
+filename <- sprintf("/res%s_%s.txt", day, run)
+filepath <- paste0(current_file_path, filename)
+res <- file(filepath, "w")
 
 writeresults <- function(l, s){
   write(l, res) #language
