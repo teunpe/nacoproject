@@ -2,8 +2,8 @@
 
 ### Summary
 Esperanto is a constructed language intended to be "the international language". In this study we comprare Esperanto 
-to 7 relatively similar languages: English (en), German (de), Polish (pl), Russian (ru), Greek (el), Latin (la) and 
-French (fr). And to 4 more distant languages: Chinese (zh), Swahili (sw), Arabic (ar) and Hindi (hi). The aim is to 
+to 7 relatively similar languages: English (en), German (de), Polish (pl), Russian (ru), Greek (el), Latin (la), Hindi (hi) and 
+French (fr). And to 4 more distant languages: Chinese (zh), Swahili (sw) and Arabic (ar). The aim is to 
 evaluate how similar are those languages to Esperanto, as well as  assessing whether they are more similar 
 orthographically or phonetically.
 
