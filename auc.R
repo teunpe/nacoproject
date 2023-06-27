@@ -9,7 +9,7 @@ library(gridExtra)
 current_file_path <- path.expand(dirname(rstudioapi::getSourceEditorContext()$path))
 current_file_path
 getwd()
-setwd(paste0(current_file_path, "/results/corr_trainset"))
+setwd(paste0(current_file_path, "/results/chunk/corr"))
 getwd()
 
 #write into file
@@ -19,7 +19,7 @@ run=1
 
 # output file for all results
 day<-format(Sys.Date(), "%d")
-filename <- sprintf("/res%s_%s.csv", day, run)
+filename <- sprintf("/res%s_%s_chunk.csv", day, run)
 filepath <- paste0(current_file_path, filename)
 res <- file(filepath, "w")
 
@@ -31,7 +31,7 @@ writeresults <- function(tre, s){
 }
 
 # output file for overall means for r and language per language set
-fname <- sprintf("/res%s_%s_comp.csv", day, run)
+fname <- sprintf("/res%s_%s_comp_chunk.csv", day, run)
 fpath <- paste0(current_file_path, fname)
 fme <- file(fpath, "w")
 writemeans <- function(m){
@@ -57,10 +57,10 @@ for(lang in langs) {
     for (tre in 0:2) {
       aucs <- list()
       for (re in 0:2) {
-        score = readLines(sprintf("eo_%s_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
@@ -96,10 +96,10 @@ for(lang in langs) {
     for (tre in 0:2) {
       aucs <- list()
       for (re in 0:2) {
-        score = readLines(sprintf("eo_%s_spec_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_spec_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_spec_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_spec_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
@@ -139,10 +139,10 @@ for(lang in tlangs) {
     for (tre in 0:2) {
       aucs <- list()
       for (re in 0:2) {
-        score = readLines(sprintf("eo_%s_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_transl_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_transl_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
@@ -178,10 +178,10 @@ for(lang in tlangs) {
     for (tre in 0:2) {
       aucs <- list()
       for (re in 0:2) {
-        score = readLines(sprintf("eo_%s_spec_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_spec_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_transl_spec_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_transl_spec_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
@@ -218,10 +218,10 @@ for(lang in plangs) {
     for (tre in 0:1) {
       aucs <- list()
       for (re in 0:1) {
-        score = readLines(sprintf("eo_%s_ipa_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_ipa_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_ipa_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_ipa_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
@@ -257,10 +257,10 @@ for(lang in plangs) {
     for (tre in 0:1) {
       aucs <- list()
       for (re in 0:1) {
-        score = readLines(sprintf("eo_%s_ipa_spec_t%s-%s.txt", r, tre, re))
+        score = readLines(sprintf("eo_%s_ipa_spec_t%s-%s_chunk.txt", r, tre, re))
         data_e = as.data.frame(score)
         data_e$label <- 0
-        score = readLines(sprintf("%s_%s_ipa_spec_t%s-%s.txt", lang, r, tre, re))
+        score = readLines(sprintf("%s_%s_ipa_spec_t%s-%s_chunk.txt", lang, r, tre, re))
         data_t = as.data.frame(score)
         data_t$label <- 1
         data_t = rbind(data_e, data_t)
