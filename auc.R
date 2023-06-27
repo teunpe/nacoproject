@@ -130,7 +130,7 @@ tlangs <- list('ar', 'el', 'hi', 'ru')
 write("\n\n---------------------------------------------", res)
 write("TRANSLITERAL GLOBAL ALPHABET", res) 
 write("---------------------------------------------\n", res)
-globalmeans <- list()
+globalmeans2 <- list()
 for(lang in tlangs) {
   rmeans <- list()
   for(r in 3:5) {
@@ -158,18 +158,18 @@ for(lang in tlangs) {
     write(sprintf("mean, %s \n", rmean), res)
     rmeans <- c(rmeans, rmean)
   }
-  globalmeans <- append(globalmeans, list(rmeans))
+  globalmeans2 <- append(globalmeans2, list(rmeans))
 }
 
-print(specmeans)
+print(globalmeans2)
 write("\nTRANSLITERAL GLOBAL ALPHABET", fme) 
-writemeans(specmeans)
+writemeans(globalmeans2)
 
 #transliteral text, specific alphabet
 write("\n\n---------------------------------------------", res)
 write("TRANSLITERAL SPECIFIC ALPHABET", res) 
 write("---------------------------------------------\n", res)
-globalmeans <- list()
+specmeans2 <- list()
 for(lang in tlangs) {
   rmeans <- list()
   for(r in 3:5) {
@@ -197,19 +197,19 @@ for(lang in tlangs) {
     write(sprintf("mean, %s \n", rmean), res)
     rmeans <- c(rmeans, rmean)
   }
-  globalmeans <- append(globalmeans, list(rmeans))
+  specmeans2 <- append(specmeans2, list(rmeans))
 }
 
-print(specmeans)
+print(specmeans2)
 write("\nTRANSLITERAL SPECIFIC ALPHABET", fme) 
-writemeans(specmeans)
+writemeans(specmeans2)
 
 #phonetic text, global alphabet for variant 0 ligature false
 plangs <- list("ar", "de", "el", "en", "eo", "fr", "hi", "la", "pl", "ru", "sw", "zh")
 write("\n\n---------------------------------------------", res)
 write("PHONETIC GLOBAL ALPHABET", res) 
 write("---------------------------------------------\n", res)
-globalmeans <- list()
+globalmeans3 <- list()
 for(lang in plangs) {
   rmeans <- list()
   for(r in 3:5) {
@@ -237,18 +237,18 @@ for(lang in plangs) {
     write(sprintf("mean, %s \n", rmean), res)
     rmeans <- c(rmeans, rmean)
   }
-  globalmeans <- append(globalmeans, list(rmeans))
+  globalmeans3 <- append(globalmeans3, list(rmeans))
 }
 
-print(specmeans)
+print(globalmeans3)
 write("\nPHONETIC GLOBAL ALPHABET", fme) 
-writemeans(specmeans)
+writemeans(globalmeans3)
 
 #phonetic text, global alphabet for variant 0 ligature false
 write("\n\n---------------------------------------------", res)
 write("PHONETIC SPECIFIC ALPHABET", res) 
 write("---------------------------------------------\n", res)
-globalmeans <- list()
+specmeans3 <- list()
 for(lang in langs) {
   rmeans <- list()
   for(r in 3:5) {
@@ -276,10 +276,10 @@ for(lang in langs) {
     write(sprintf("mean, %s \n", rmean), res)
     rmeans <- c(rmeans, rmean)
   }
-  globalmeans <- append(globalmeans, list(rmeans))
+  specmeans3 <- append(specmeans3, list(rmeans))
 }
 
-print(specmeans)
+print(specmeans3)
 write("\nPHONETIC SPECIFIC ALPHABET", fme) 
-writemeans(specmeans)
+writemeans(specmeans3)
 
