@@ -914,3 +914,18 @@ testfile 0,  0.9904,0.981311475409836,0.985855737704918
 testfile 1,  1,0.992786885245901,0.996393442622951
 mean, 0.991124590163935 
 
+lan=zh; r=3
+testfile 0,  1,1,1
+testfile 1,  1,1,1
+mean, 1 
+
+lan=zh; r=4
+testfile 0,  1,1,1
+testfile 1,  1,1,1
+mean, 1 
+
+lan=zh; r=5
+testfile 0,  1,1,1
+testfile 1,  1,1,1
+mean, 1 
+

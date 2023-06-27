@@ -39,7 +39,7 @@ writemeans <- function(m){
   i = 1
   for (l in m) {
     print(l)
-    write(paste(sprintf("%s, ", langs[i]), paste(sprintf("  %.2f", l), collapse= ",")), fme) #score
+    write(paste(sprintf("%s, ", plangs[i]), paste(sprintf("  %.2f", l), collapse= ",")), fme) #score
     i = i+1
   }
 }
@@ -249,7 +249,7 @@ write("\n\n---------------------------------------------", res)
 write("PHONETIC SPECIFIC ALPHABET", res) 
 write("---------------------------------------------\n", res)
 specmeans3 <- list()
-for(lang in langs) {
+for(lang in plangs) {
   rmeans <- list()
   for(r in 3:5) {
     write(sprintf("lan=%s; r=%s",lang, r), res)
