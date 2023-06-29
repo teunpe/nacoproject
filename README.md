@@ -17,6 +17,8 @@ orthographically or phonetically.
 * **data**: Contains the raw data, the transliterated version, and the corresponding train/test split.
 * **results**: Contains the output from the negative selection algorithm.
 
+Most of the results can be found on the phonectics branch.
+
 ### Setup
 1. Clone the current repository to the directory of your choice.
    
