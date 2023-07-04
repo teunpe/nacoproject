@@ -10,11 +10,14 @@ orthographically or phonetically.
 ### Content Description
 * **fetch.sh**: Retrieves the data files for the relevant languages from the OSCAR-2109 dataset.
 * **dataprep.ipynb:** Pre-processes the raw data files. 
-* **negsel.ipynb**: Performs negative selection on the pre-processed files.
-* **auc.R**: Computes the Area Under the (ROC) Curve.
+* **negsel.ipynb**: Performs negative selection with r-contiguous algorithm on the pre-processed files.
+* **negsel_chunk.ipynb**: Performs negative selection with r-chunk algorithm on the pre-processed files.
+* **auc.R**: Computes the Area Under the (ROC) Curve for r-contiguous method.
+* **auc_chunk.R**: Computes the Area Under the (ROC) Curve for the r-chunk algorithm.
 * **alphabets**: Contains the alphabet per language.
-* **data**: Contains the raw data, the transliterated version, and the corresponding train/test split.
+* **data**: Contains the pre-processed data (train and test) and the subsets of the raw data for the transliterated and the phonetics version
 * **results**: Contains the output from the negative selection algorithm.
+* **old_stats**: Archive of previous auc results
 
 ### Setup
 1. Clone the current repository to the directory of your choice.
@@ -30,6 +33,26 @@ orthographically or phonetically.
     `jupyter notebook`
    
 4. Once the data is put into correct format, the '**negsel.ipynb**' notebook can be ran to perform Negative Selection.
-5. Now that the experiments have been performed, the results can inspected by opening the file '**auc.R**' with the desired code editor. And run all the chunks of code. A collection of the results can be seen in the main (current) folder `/nacoproject` under the name `resD_R.txt` where D is the current day, and R the run number e.g. `res22_1.txt`.
+5. Now that the experiments have been performed, the results can inspected by opening the file '**auc.R**' with the desired code editor. And run all the chunks of code. A collection of the results can be seen on the in the main (current) folder `/nacoproject` folder under the name `resD_R.txt` where D is the current day, and R the run number e.g. `res22_1.txt`.
 
 ### Example
+
+Files in the results folder are generally named like this:
+
+{lan}_{r}_{language_set}_{alphabet}_{trainfile_repeat}-{repeat}_{algorithm}.txt
+
+langugage_set, alphabet and algorithm are left blank for the default values which are
+orthographic, global alphabet and r-contiguous respectively.
+
+Files in the data folder are generally named like this:
+{lan}_{language_set}_{repeat}.test
+
+For the train language esperanto there also exist .train files
+
+
+For the phonetic data we had to distinguish between languages that could be processed with epitran and languages that had to be transliterated to IPA externally.
+For the external languages there exist subset files which are just subsets of the original data comparable to _subset files in the translit folder.
+The results of the external translators / epitran can be found in the _raw_ files.
+For some languages there exist different epitran objects to convert the language into IPA as well as the option to use non-standard IPA ligatures.
+These variants are marked with the number of the epitran variant and an l flag if the ligature option was set to true.
+So, e.g. sw_raw_2_ipa_0l.test is the ipa result for the second swahili testset using the first variant "swa-Latn" with the ligature option set to true. The variant names can be found in the dataprep.ipynb file, further explanation regarding the variants can be found on the epitran website.
