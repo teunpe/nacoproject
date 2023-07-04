@@ -12,12 +12,12 @@ orthographically or phonetically.
 * **dataprep.ipynb:** Pre-processes the raw data files. 
 * **negsel.ipynb**: Performs negative selection with r-contiguous algorithm on the pre-processed files.
 * **negsel_chunk.ipynb**: Performs negative selection with r-chunk algorithm on the pre-processed files.
-* **auc.R**: Computes the Area Under the (ROC) Curve.
+* **auc.R**: Computes the Area Under the (ROC) Curve for r-contiguous method.
+* **auc_chunk.R**: Computes the Area Under the (ROC) Curve for the r-chunk algorithm.
 * **alphabets**: Contains the alphabet per language.
-* **data**: Contains the raw data, the transliterated version, and the corresponding train/test split.
+* **data**: Contains the pre-processed data (train and test) and the subsets of the raw data for the transliterated and the phonetics version
 * **results**: Contains the output from the negative selection algorithm.
-
-Most of the results can be found on the phonectics branch.
+* **old_stats**: Archive of previous auc results
 
 ### Setup
 1. Clone the current repository to the directory of your choice.
